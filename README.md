@@ -1,2 +1,2 @@
-# LIST_H
-C89 header-only implementation of singly-linked lists. (Also compatible with C++98)
+# C_HELPING_HEADERS
+C89 header-only implementation of essential abstract data types. (Also compatible with C++98)
