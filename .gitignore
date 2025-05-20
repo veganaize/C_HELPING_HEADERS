@@ -1,2 +1,7 @@
-*.obj
-*.exe
+# Ignore everything
+*
+
+# Except these...
+!.gitignore
+!list.h
+!list-tests.c
