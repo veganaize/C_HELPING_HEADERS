@@ -17,7 +17,7 @@ main(void)
     const void * popped_pointer = NULL;
 
     /* Test empty queue */
-    assert( NULL == queue->front);
+    assert( NULL == queue->front );
     assert( NULL == queue->back );
 
     /* Queue pointer tests */
@@ -39,16 +39,16 @@ main(void)
     queue_push_int(queue, 2);
 
     result = queue_pop_int(queue, &value);
-    assert( 1 == result);
-    assert( 1 == value);
+    assert( 1 == result );
+    assert( 1 == value );
 
     queue_pop_int(queue, &value);
-    assert( 1 == result);
+    assert( 1 == result );
     assert( 2 == value );
 
     result = queue_pop_int(queue, &value);
     assert( 0 == result );  /* Falsey because queue empty */
-    assert( 2 == value);  /* Unaltered `value` because queue empty */
+    assert( 2 == value );  /* Unaltered `value` because queue empty */
 
     free(queue);
     queue = NULL;
