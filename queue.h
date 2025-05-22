@@ -124,7 +124,7 @@ queue_pop_int(Queue * queue, int * popped_element)
         queue->back = NULL;
     }
 
-    return 1;  /* Falsey: Element popped */
+    return 1;  /* Truthy: Element popped */
 }
 
 
