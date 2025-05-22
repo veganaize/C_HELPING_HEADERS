@@ -46,7 +46,6 @@ queue_push_pointer(Queue * queue, const void * element)
 
     if (queue->back) { queue->back->next = new_node; }
     queue->back = new_node;
-
     if (! queue->front) { queue->front = queue->back; }
 
     return 1;  /* Truthy: Success */
@@ -64,7 +63,6 @@ queue_push_int(Queue * queue, const int element)
 
     if (queue->back) { queue->back->next = new_node; }
     queue->back = new_node;
-
     if (! queue->front) { queue->front = queue->back; }
 
     return 1;  /* Truthy: Success */
