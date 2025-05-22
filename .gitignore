@@ -5,3 +5,5 @@
 !.gitignore
 !list.h
 !list-tests.c
+!queue.h
+!queue-tests.c

@@ -2,7 +2,7 @@
 #define LIST_H
 /**
  * @file list.h
- * @brief C89 header-only implementation of singly-linked lists.
+ * @brief C89 header-only library for singly-linked lists.
  * @author veganaiZe <veganaiZe@pm.me>
  */
 
@@ -11,7 +11,7 @@
 
 
 /**
- * Effective super type for other node types.
+ * Effective super type for all other list node types.
  */
 typedef struct LinkedListNode {
     struct LinkedListNode * next;
@@ -19,9 +19,9 @@ typedef struct LinkedListNode {
 
 
 /**
- * LeetCode compatible linked list node.
+ * LeetCode (mostly compatible*) linked list node, with integer value: `val`.
  * LeetCode doesn't include typedef portions, only `struct ListNode`.
- * LeetCode doesn't have `next` pointer first. (Bad for generic routines.)
+ * *LeetCode doesn't have `next` pointer first so it's bad for generic routines.
  */
 typedef struct ListNode {
      struct ListNode * next;
@@ -34,7 +34,7 @@ typedef struct ListNode {
  */
 typedef struct VoidListNode {
     struct VoidListNode * next;
-    void * element;
+    const void * element;
 } VoidListNode;
 
 
@@ -43,7 +43,7 @@ typedef struct VoidListNode {
  */
 #define new_LeetListNode(x) new_IntListNode((x))
 IntListNode *
-new_IntListNode(int val)
+new_IntListNode(const int val)
 {
     IntListNode * new_node = (IntListNode *) malloc(sizeof (IntListNode));
     if (! new_node) { return NULL; }
@@ -58,7 +58,7 @@ new_IntListNode(int val)
  * Create new linked list node, with a pointer element.
  */
 VoidListNode *
-new_VoidListNode(void * element)
+new_VoidListNode(const void * element)
 {
     VoidListNode * new_node = (VoidListNode *) malloc(sizeof (VoidListNode));
     if (! new_node) { return NULL; }

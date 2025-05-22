@@ -10,7 +10,7 @@ main(void)
     struct ListNode * list_node = NULL;
     IntListNode     * int_node  = NULL;
     VoidListNode    * void_node = NULL;
-    int value = 42;
+    const int value = 42;
 
     /* Test LeetCode ListNode */
     list_node = new_LeetListNode(value);
@@ -24,10 +24,10 @@ main(void)
     assert( NULL == int_node->next );
     list_delete(int_node); int_node = NULL;
 
-    int_node = list_ints_new(5, 1,2,3,4,5);
+    int_node = list_ints_new(5, 1,2,3,4,value);
     assert( 1 == int_node->val );
     assert( 2 == int_node->next->val );
-    assert( 5 == int_node->next->next->next->next->val );
+    assert( 42 == int_node->next->next->next->next->val );
     assert( NULL == int_node->next->next->next->next->next );
     list_delete(int_node); int_node = NULL;
 
