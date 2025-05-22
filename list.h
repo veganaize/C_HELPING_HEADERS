@@ -41,7 +41,7 @@ typedef struct VoidListNode {
 /**
  * Create a new linked list node, with an integer value.
  */
-#define new_LeetListNode(x) new_IntListNode((x))
+#define new_LeetListNode new_IntListNode
 IntListNode *
 new_IntListNode(const int val)
 {
