@@ -7,3 +7,5 @@
 !list-tests.c
 !queue.h
 !queue-tests.c
+!tree.h
+!tree-tests.c
