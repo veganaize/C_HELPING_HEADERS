@@ -54,9 +54,14 @@ new_IntTreeNode(int val)
 }
 
 
+/**
+ * Create new tree based on list of integers.
+ * Frees entire linked list argument from memory, at end of function.
+ */
 IntTreeNode *
 tree_ints_bfs_new(IntListNode * list)
 {
+    IntListNode * head = list;
     int result = 0;
     IntTreeNode * tree_top = NULL;
     BinaryTreeNode * tree_node = NULL;
@@ -82,8 +87,8 @@ tree_ints_bfs_new(IntListNode * list)
         } else { tree_node->right = NULL; }
     }
 
-    queue_delete(tree_node_queue);
-    tree_node_queue = NULL;
+    queue_delete(tree_node_queue); tree_node_queue = NULL;
+    list_delete(head); head = NULL;
     return tree_top;
 }
 
